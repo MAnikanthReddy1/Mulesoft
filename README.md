@@ -8,10 +8,10 @@ class Main{ private static String databasePath = "jdbc:sqlite:MoviesDatabase.db"
 public static void main(String[] args){
 	Connection connect = null;
 
-	Movie DJ = new Movie("Duvvada Jagannadham","Allu Arjun","Harish Shankar",2017);
-Movie Pushpa = new Movie("Pushpa","Allu Arjun","Sukumar",2021);
-Movie Sarrainodu = new Movie("Sarrainodu","Allu Arjun","Boyapati Srenu",2016);
-Movie RaceGurram = new Movie("Race Gurram","Allu Arjun","Surender",2014);
+	Movie DJ = new Movie("Bunny","Allu Arjun"," V. V. Vinayak",2005);
+Movie Pushpa = new Movie("Arya","Allu Arjun","Sukumar",2004);
+Movie Sarrainodu = new Movie("Deshamuduru","Allu Arjun"," Puri Jagannadh",2007);
+Movie RaceGurram = new Movie("Arya 2","Allu Arjun","Sukumar",2009);
 	
 	try {
 		connect = DriverManager.getConnection(databasePath);
@@ -21,10 +21,10 @@ Movie RaceGurram = new Movie("Race Gurram","Allu Arjun","Surender",2014);
 		statement.executeUpdate("drop table if exists Movies");
 		statement.executeUpdate("create table Movies (name string, actor string, director string,year integer)");
 		
-		SqliteHandler.insertMovie(statement,DJ);
-		SqliteHandler.insertMovie(statement,Pushpa);
-		SqliteHandler.insertMovie(statement,Sarrainodu);
-		SqliteHandler.insertMovie(statement,RaceGurram);
+		SqliteHandler.insertMovie(statement,Bunny);
+		SqliteHandler.insertMovie(statement,Arya);
+		SqliteHandler.insertMovie(statement,Deshamuduru);
+		SqliteHandler.insertMovie(statement,Arya 2);
 
 		ResultSet resultset = SqliteHandler.getMovies(statement);
   System.out.println("");
